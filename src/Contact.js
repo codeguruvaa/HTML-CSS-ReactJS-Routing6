@@ -1,8 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import './style.css';
 
-function Contact() {
+export default function Contact() {
+
+    var btn = useNavigate();
+
+    function msg(){
+        btn("/");
+    }
+  
+
     return (
         <div>
 
@@ -40,8 +48,11 @@ function Contact() {
                 </p>
             </section>
 
+            <button onClick={()=>msg()}>
+                Open Home Page..
+            </button>
+
         </div>
     );
 }
 
-export default Contact;
